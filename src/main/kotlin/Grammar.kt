@@ -2,10 +2,10 @@ import java.io.File
 import java.lang.StringBuilder
 
 class Grammar(filePath: String) {
-    private val productions: HashMap<String, ArrayList<ArrayList<String>>> = HashMap()
-    private val terminals: MutableList<String> = mutableListOf()
-    private val nonTerminals: MutableList<String> = mutableListOf()
-    private var startSymbol: String = ""
+    val productions: HashMap<String, ArrayList<ArrayList<String>>> = HashMap()
+    val terminals: MutableList<String> = mutableListOf()
+    val nonTerminals: MutableList<String> = mutableListOf()
+    var startSymbol: String = ""
 
     init {
         readFile(filePath)
@@ -90,4 +90,8 @@ class Grammar(filePath: String) {
 
         return result.toString()
     }
+
+    /*fun getStartSymbol(): String {
+        return startSymbol;
+    }*/
 }

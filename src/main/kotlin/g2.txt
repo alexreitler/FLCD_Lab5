@@ -1,141 +1,144 @@
-Program Identifier Identifiername Letter Digit Non_zero_digit RelationSymbol MathSymbol Symbol Sign Int_constant Number String_Constant StringData Statement Declaration Assignstatement Compoundstatement Type1 Type Arraydecl Expression Relation Term Ifstmt Whilestmt Repeat Direction Workingvariable For Inputstmt Inputnrstmt Outputstmt Iostmt int char String
-A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z _ 0 1 2 3 4 5 6 7 8 9 + - * ** / = < =< <= == => >= > <> != ( ) { } [ ] ; : , ‘ “ ' " ! @ # & $ ? \ ~ % space newline array char const do else if int of program read then var while write repeat until decide then or this is good that until this tells you to stop start working with from going up down readNumber go halt epsilon declare
+Program Identifier Identifiername Letter Digit Non_zero_digit RelationSymbol MathSymbol Symbol Sign Int_constant Number String_Constant StringData Statement Declaration Assignstatement Compoundstatement Type1 Type Arraydecl Expression Relation Term Ifstmt Whilestmt Repeat Direction Workingvariable For Inputstmt Inputnrstmt Outputstmt Iostmt
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z _ 0 1 2 3 4 5 6 7 8 9 + - * ** / = < =< <= == => >= > <> != ( ) { } [ ] ; : , ‘ “ ' " ! @ # & $ ? \ ~ % space newline array char const do else if int of program read then var while write repeat until decide then or this is good that until this tells you to stop start working with from going up down readNumber go halt epsilon declare int char String
 Program
-Identifier -> Letter Identifiername
-Identifiername -> Letter Identifiername
-Identifiername -> Digit Identifiername
-Identifiername -> epsilon
-Letter -> A
-Letter -> B
-Letter -> C
-Letter -> D
-Letter -> E
-Letter -> F
-Letter -> G
-Letter -> H
-Letter -> I
-Letter -> J
-Letter -> K
-Letter -> L
-Letter -> M
-Letter -> N
-Letter -> O
-Letter -> P
-Letter -> Q
-Letter -> R
-Letter -> S
-Letter -> T
-Letter -> U
-Letter -> V
-Letter -> W
-Letter -> X
-Letter -> Y
-Letter -> Z
-Letter -> a
-Letter -> b
-Letter -> c
-Letter -> d
-Letter -> e
-Letter -> f
-Letter -> g
-Letter -> h
-Letter -> i
-Letter -> j
-Letter -> k
-Letter -> l
-Letter -> m
-Letter -> n
-Letter -> o
-Letter -> p
-Letter -> q
-Letter -> r
-Letter -> s
-Letter -> t
-Letter -> u
-Letter -> v
-Letter -> w
-Letter -> x
-Letter -> y
-Letter -> z
-Digit -> 0
-Digit -> Non_zero_digit
-Non_zero_digit -> 1
-Non_zero_digit -> 2
-Non_zero_digit -> 3
-Non_zero_digit -> 4
-Non_zero_digit -> 5
-Non_zero_digit -> 6
-Non_zero_digit -> 7
-Non_zero_digit -> 8
-Non_zero_digit -> 9
-RelationSymbol -> <
-RelationSymbol -> >
-RelationSymbol -> ==
-RelationSymbol -> <=
-RelationSymbol -> >=
-RelationSymbol -> !=
-MathSymbol -> +
-MathSymbol -> -
-MathSymbol -> *
-MathSymbol -> /
-MathSymbol -> %
-MathSymbol -> **
-Symbol -> !
-Symbol -> @
-Symbol -> #
-Symbol -> $
-Symbol -> &
-Symbol -> ?
-Symbol -> \
-Symbol -> ~
-Sign -> -
-Sign -> +
-Int_constant -> Sign Number
-Int_constant -> 0
-Number -> Non_zero_digit Digit
-String_Constant -> " StringData "
-StringData -> Letter StringData
-StringData -> Digit StringData
-StringData -> Symbol StringData
-StringData -> epsilon
-Program -> Statement
-Statement -> Declaration
-Statement -> Assignstatement
-Statement -> Compoundstatement
-Statement -> Ifstmt
-Statement -> Whilestmt
-Statement -> For
-Statement -> Repeat
-Statement -> Iostmt
-Declaration -> declare Type Identifier
-Assignstatement -> Identifier = Expression
-Compoundstatement -> go Compoundstatement
-Compoundstatement -> Statement Compoundstatement
-Compoundstatement -> Statement halt
-Type1 -> int
-Type1 -> char
-Type1 -> String
-Arraydecl -> Identifier Type1 [ Number ]
-Type -> Type1
-Type -> Arraydecl
-Expression -> Expression MathSymbol Term
-Expression -> Term
-Relation -> Expression RelationSymbol Expression
-Term -> ( Expression )
-Term -> Identifier
-Term -> Int_constant
-Ifstmt -> decide Relation then do Statement or Statement
-Whilestmt -> while this is good Expression do that Statement
-Repeat -> do this Statement until this tells you to stop Relation
-Direction -> up
-Direction -> down
-Workingvariable -> Identifier
-Workingvariable -> Int_constant
-For -> start working with this Identifier from this Workingvariable to this Workingvariable going Direction Compoundstatement
-Outputstmt -> write " String "
-Outputstmt -> write Identifier
-Inputstmt -> read Identifier
-Inputnrstmt -> readNumber Identifier
-Iostmt -> Outputstmt
-Iostmt -> Inputstmt
-Iostmt -> Inputnrstmt
+Program->Compoundstatement
+Identifier->Letter
+Identifier->Letter Identifiername
+Identifiername->Letter Identifiername
+Identifiername->Digit Identifiername
+Identifiername->epsilon
+Letter->a
+Letter->b
+Letter->c
+Letter->d
+Letter->e
+Letter->f
+Letter->g
+Letter->h
+Letter->i
+Letter->j
+Letter->k
+Letter->l
+Letter->m
+Letter->n
+Letter->o
+Letter->p
+Letter->q
+Letter->r
+Letter->s
+Letter->t
+Letter->u
+Letter->v
+Letter->w
+Letter->x
+Letter->y
+Letter->z
+Letter->A
+Letter->B
+Letter->C
+Letter->D
+Letter->E
+Letter->F
+Letter->G
+Letter->H
+Letter->I
+Letter->J
+Letter->K
+Letter->L
+Letter->M
+Letter->N
+Letter->O
+Letter->P
+Letter->Q
+Letter->R
+Letter->S
+Letter->T
+Letter->U
+Letter->V
+Letter->W
+Letter->X
+Letter->Y
+Letter->Z
+Digit->0
+Digit->Non_zero_digit
+Non_zero_digit->1
+Non_zero_digit->2
+Non_zero_digit->3
+Non_zero_digit->4
+Non_zero_digit->5
+Non_zero_digit->6
+Non_zero_digit->7
+Non_zero_digit->8
+Non_zero_digit->9
+RelationSymbol-><
+RelationSymbol->>
+RelationSymbol->==
+RelationSymbol-><=
+RelationSymbol->>=
+RelationSymbol->!=
+MathSymbol->+
+MathSymbol->-
+MathSymbol->*
+MathSymbol->/
+MathSymbol->%
+MathSymbol->**
+Symbol->!
+Symbol->@
+Symbol->#
+Symbol->$
+Symbol->&
+Symbol->?
+Symbol->\
+Symbol->~
+Sign->-
+Sign->+
+Int_constant->0
+Int_constant->Number
+Int_constant->Sign Number
+Number->Non_zero_digit
+Number->Non_zero_digit Digit
+String_Constant->" StringData "
+StringData->Letter StringData
+StringData->Digit StringData
+StringData->Symbol StringData
+StringData->epsilon
+Program->Statement
+Statement->Ifstmt
+Statement->Whilestmt
+Statement->For
+Statement->Repeat
+Statement->Iostmt
+Statement->Declaration
+Statement->Assignstatement
+Declaration->declare Type Identifier
+Assignstatement->Identifier = Expression
+Compoundstatement->go Compoundstatement
+Compoundstatement->halt
+Compoundstatement->Statement Compoundstatement
+Type1->int
+Type1->char
+Type1->String
+Arraydecl->Identifier Type1 [ Number ]
+Type->Type1
+Type->Arraydecl
+Expression->Term
+Expression->Expression MathSymbol Term
+Relation->Expression RelationSymbol Expression
+Term->Int_constant
+Term->Identifier
+Term->( Expression )
+Ifstmt->decide Relation then do Statement else do Statement
+Whilestmt->while this is good Expression do that Statement
+Repeat->do this Statement until this tells you to stop Relation
+Direction->up
+Direction->down
+Workingvariable->Identifier
+Workingvariable->Int_constant
+For->start working with this Identifier from this Workingvariable to this Workingvariable going Direction Compoundstatement
+Outputstmt->write " String "
+Outputstmt->write Identifier
+Inputstmt->read Identifier
+Inputnrstmt->readNumber Identifier
+Iostmt->Outputstmt
+Iostmt->Inputstmt
+Iostmt->Inputnrstmt
