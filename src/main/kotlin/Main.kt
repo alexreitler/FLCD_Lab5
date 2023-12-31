@@ -1,5 +1,7 @@
 import java.io.BufferedReader
+import java.io.BufferedWriter
 import java.io.FileReader
+import java.io.FileWriter
 import java.util.*
 
 fun main() {
@@ -8,6 +10,7 @@ fun main() {
     var grammar = grammar1
     val algorithm = RecursiveDescendant(grammar2)
     val seq = sequenceFromPIF("src/main/kotlin/PIF.out")
+    val output = Output(grammar2)
 
     val menu = mapOf(
         "1" to "Load file G1",
@@ -44,6 +47,11 @@ fun main() {
 
                 val productionString = algorithm.run(seq)
                 println(productionString)
+                output.addProductionString(productionString)
+                println(output)
+                BufferedWriter(FileWriter("out2.txt")).use { bufferedWriter ->
+                    bufferedWriter.write(output.toString())
+                }
             }
             "9" -> return
             else -> println("Invalid choice")
