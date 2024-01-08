@@ -3,6 +3,7 @@ a b c
 S
 S -> a A
 S -> a C
+A -> a
 A -> A B
 B -> b
 C -> epsilon

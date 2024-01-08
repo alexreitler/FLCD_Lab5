@@ -51,7 +51,7 @@ class RecursiveDescendant(private val grammar: Grammar) {
         }
 
         return if (configuration.state == "f") {
-            println("Sequence accepted\n")
+            //println("Sequence accepted\n")
             configuration.workingStack
         } else {
             throw Exception("Syntax Error")
@@ -84,7 +84,7 @@ class RecursiveDescendant(private val grammar: Grammar) {
     private fun anotherTry() {
         val topWorking = configuration.workingStack.peek()
         val gamma = grammar.productions[topWorking.split("#")[0]]!![Integer.parseInt(topWorking.split("#")[1]) - 1]
-        println("Gamma: $gamma")
+        //println("Gamma: $gamma")
 
         if (Integer.parseInt(topWorking.split("#")[1]) != grammar.productions[topWorking.split("#")[0]]!!.size) {
             configuration.state = "q"
@@ -92,11 +92,12 @@ class RecursiveDescendant(private val grammar: Grammar) {
             configuration.workingStack.pop()
             configuration.workingStack.push("${topWorking.split("#")[0]}#${Integer.parseInt(topWorking.split("#")[1]) + 1}")
             val gamma2 = ArrayList(grammar.productions[topWorking.split("#")[0]]!![Integer.parseInt(topWorking.split("#")[1])])
-            println("Gamma2: $gamma2")
+            //println("Gamma2: $gamma2")
             gamma2.reverse()
             gamma2.forEach { s -> configuration.inputStack.push(s) }
 
-        } else if (configuration.position == 1 && topWorking.split("#")[0] == grammar.startSymbol) {
+        } else if (configuration.position == 2 && topWorking.split("#")[0] == grammar.startSymbol) {
+            //println(topWorking)
             configuration.state = "e"
         } else {
             configuration.workingStack.pop()

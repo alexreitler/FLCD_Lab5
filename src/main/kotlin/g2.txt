@@ -120,7 +120,6 @@ Type1->char
 Type1->String
 Arraydecl->Identifier Type1 [ Number ]
 Type->Type1
-Type->Arraydecl
 Expression->Term
 Expression->Expression MathSymbol Term
 Relation->Expression RelationSymbol Expression
